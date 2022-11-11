@@ -34,17 +34,33 @@ class App {
         console.log(typeof this.firstNumber, this.firstNumber);
 
         //store the operator (+, -, *, /)
+        this.validOperators = ["+", "-", "*", "/"];
+
         this.operator = prompt('Please enter an operator (+, -, *, /)');
         console.log(this.operator);
+
+        if (!this.validOperators.includes(this.operator)) {
+            this.operator = prompt('Please enter a VALID operator (+, -, *, /)');
+        }
 
         //store the second number
         this.secondPrompt = prompt('Please enter your second number');
         this.secondNumber = parseInt(this.secondPrompt);
         console.log(typeof this.secondNumber, this.secondNumber);
 
+
     }
     //call the calculations above
     callCalculations() {
+        
+        //if this.operator is not in the operators array, call the operator prompt again
+        
+
+        //create a variable to check if this.operator is in the operators array
+        let operatorCheck = operators.includes(this.operator);
+        console.log(operatorCheck);
+        
+
         //switch statement
         switch(this.operator) {
             case "+":
