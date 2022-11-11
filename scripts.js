@@ -32,6 +32,10 @@ class App {
         this.firstPrompt = prompt('Please enter your first number');
         this.firstNumber = parseInt(this.firstPrompt);
         console.log(typeof this.firstNumber, this.firstNumber);
+        while(isNaN(this.firstNumber)) {
+            this.firstPrompt = prompt('Please enter your first number');
+            this.firstNumber = parseInt(this.firstPrompt);
+        }
 
         //store the operator (+, -, *, /)
         this.validOperators = ["+", "-", "*", "/"];
@@ -39,15 +43,20 @@ class App {
         this.operator = prompt('Please enter an operator (+, -, *, /)');
         console.log(this.operator);
 
+        //while loop to check if the operator is valid
         while (!this.validOperators.includes(this.operator)) {
-            this.operator = prompt('Please enter a valid operator (+, -, *, /)');
+            this.operator = prompt('Please enter a VALID operator (+, -, *, /)');
         } 
 
         //store the second number
         this.secondPrompt = prompt('Please enter your second number');
         this.secondNumber = parseInt(this.secondPrompt);
         console.log(typeof this.secondNumber, this.secondNumber);
-
+        while(isNaN(this.secondNumber)) {
+            this.secondPrompt = prompt('Please enter your second number');
+            this.secondNumber = parseInt(this.secondPrompt);
+        }
+        
 
     }
     //call the calculations above
